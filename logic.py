@@ -53,7 +53,7 @@ class Logic(QMainWindow, Ui_MainWindow):
             self.current_channel += 1
             if self.current_channel > 3:
                 self.current_channel = 1
-            self.label.setText("Channel: " + str(self.current_channel))
+            self.label.setText(f"Channel: {str(self.current_channel)}/3")
             self.update_channel_image()
 
     def change_channel_down(self):
@@ -61,7 +61,7 @@ class Logic(QMainWindow, Ui_MainWindow):
             self.current_channel -= 1
             if self.current_channel < 1:
                 self.current_channel = 3
-            self.label.setText("Channel: " + str(self.current_channel))
+            self.label.setText(f"Channel: {str(self.current_channel)}/3")
             self.update_channel_image()
 
     def turn_volume_up(self):
