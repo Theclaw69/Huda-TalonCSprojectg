@@ -12,12 +12,17 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.power_button.clicked.connect(self.toggle_power)
         self.channel_up.clicked.connect(self.change_channel_up)
         self.channel_down.clicked.connect(self.change_channel_down)
-
+        self.volum_up.clicked.connect(self.turn_volume_up)
+        self.volume_down.clicked.connect(self.turn_volume_down)
         self.is_tv_on = False
         self.current_channel = 1
+        self.current_volume = 1
 
         self.channel_images = self.load_channel_images()
         self.update_channel_image()
+
+
+
 
     def load_channel_images(self):
         channel_images = {}
@@ -58,3 +63,19 @@ class Logic(QMainWindow, Ui_MainWindow):
                 self.current_channel = 3
             self.label.setText("Channel: " + str(self.current_channel))
             self.update_channel_image()
+
+    def turn_volume_up(self):
+        if self.is_tv_on:
+            self.current_volume += 1
+            if self.current_volume >= 5:
+                self.current_volume = 5
+            self.label_2.setText("Volume: " + str(self.current_volume))
+
+    def turn_volume_down(self):
+        if self.is_tv_on:
+            self.current_volume -= 1
+            if self.current_volume <= 0:
+                self.current_volume = 0
+            self.label_2.setText("Volume: " + str(self.current_volume))
+
+
