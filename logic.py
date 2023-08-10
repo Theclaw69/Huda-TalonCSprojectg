@@ -47,23 +47,28 @@ class Logic(QMainWindow, Ui_MainWindow):
             self.power_button.setText("Power OFF")
             self.update_channel_image()
             self.volume_bar.setValue(self.current_volume)
+            self.lcdNumber.display(self.current_channel)
 
         else:
             self.power_button.setText("Power ON")
             self.graphicsView.setScene(QtWidgets.QGraphicsScene())
             self.volume_bar.setValue(0)
+            self.lcdNumber.display(0)
 
     def change_channel_up(self):
         if self.is_tv_on:
             self.current_channel += 1
+            self.lcdNumber.display(self.current_channel)
             if self.current_channel > 3:
                 self.current_channel = 1
+                self.lcdNumber.display(self.current_channel)
             self.label.setText(f"Channel: {str(self.current_channel)}/3")
             self.update_channel_image()
 
     def change_channel_down(self):
         if self.is_tv_on:
             self.current_channel -= 1
+            self.lcdNumber.display(self.current_channel)
             if self.current_channel < 1:
                 self.current_channel = 3
         self.label.setText(f"Channel: {str(self.current_channel)}/3")
