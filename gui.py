@@ -38,11 +38,8 @@ class Ui_MainWindow(object):
         self.graphicsView = QtWidgets.QGraphicsView(parent=self.centralwidget)
         self.graphicsView.setGeometry(QtCore.QRect(140, 50, 256, 192))
         self.graphicsView.setObjectName("graphicsView")
-        self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(150, 250, 55, 16))
-        self.label.setObjectName("label")
         self.volume_bar = QtWidgets.QProgressBar(parent=self.centralwidget)
-        self.volume_bar.setGeometry(QtCore.QRect(280, 250, 118, 23))
+        self.volume_bar.setGeometry(QtCore.QRect(140, 250, 251, 23))
         self.volume_bar.setProperty("value", 0)
         self.volume_bar.setObjectName("volume_bar")
         self.lcdNumber = QtWidgets.QLCDNumber(parent=self.centralwidget)
@@ -69,7 +66,6 @@ class Ui_MainWindow(object):
         self.volume_up.setText(_translate("MainWindow", "Volume +"))
         self.volume_down.setText(_translate("MainWindow", "Volume -"))
         self.channel_down.setText(_translate("MainWindow", "Channel -"))
-        self.label.setText(_translate("MainWindow", "Channel"))
 
 
 if __name__ == "__main__":
