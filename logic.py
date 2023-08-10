@@ -12,7 +12,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.power_button.clicked.connect(self.toggle_power)
         self.channel_up.clicked.connect(self.change_channel_up)
         self.channel_down.clicked.connect(self.change_channel_down)
-        self.volum_up.clicked.connect(self.turn_volume_up)
+        self.volume_up.clicked.connect(self.turn_volume_up)
         self.volume_down.clicked.connect(self.turn_volume_down)
         self.is_tv_on = False
         self.current_channel = 1

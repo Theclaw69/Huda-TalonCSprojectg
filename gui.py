@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'gui.ui'
+# Form implementation generated from reading ui file 'remotegui.ui'
 #
 # Created by: PyQt6 UI code generator 6.5.2
 #
@@ -26,9 +26,9 @@ class Ui_MainWindow(object):
         self.channel_up = QtWidgets.QPushButton(parent=self.centralwidget)
         self.channel_up.setGeometry(QtCore.QRect(70, 330, 161, 91))
         self.channel_up.setObjectName("channel_up")
-        self.volum_up = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.volum_up.setGeometry(QtCore.QRect(320, 330, 161, 91))
-        self.volum_up.setObjectName("volum_up")
+        self.volume_up = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.volume_up.setGeometry(QtCore.QRect(320, 330, 161, 91))
+        self.volume_up.setObjectName("volume_up")
         self.volume_down = QtWidgets.QPushButton(parent=self.centralwidget)
         self.volume_down.setGeometry(QtCore.QRect(320, 450, 161, 91))
         self.volume_down.setObjectName("volume_down")
@@ -44,6 +44,10 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(340, 250, 55, 16))
         self.label_2.setObjectName("label_2")
+        self.volume_bar = QtWidgets.QProgressBar(parent=self.centralwidget)
+        self.volume_bar.setGeometry(QtCore.QRect(330, 270, 118, 23))
+        self.volume_bar.setProperty("value", 0)
+        self.volume_bar.setObjectName("volume_bar")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 550, 26))
@@ -62,7 +66,7 @@ class Ui_MainWindow(object):
         self.mute_button.setText(_translate("MainWindow", "Mute"))
         self.power_button.setText(_translate("MainWindow", "Power"))
         self.channel_up.setText(_translate("MainWindow", "Channel +"))
-        self.volum_up.setText(_translate("MainWindow", "Volume +"))
+        self.volume_up.setText(_translate("MainWindow", "Volume +"))
         self.volume_down.setText(_translate("MainWindow", "Volume -"))
         self.channel_down.setText(_translate("MainWindow", "Channel -"))
         self.label.setText(_translate("MainWindow", "Channel"))
