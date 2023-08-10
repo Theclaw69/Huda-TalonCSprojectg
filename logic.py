@@ -1,5 +1,4 @@
 import os
-import time
 from PyQt6.QtWidgets import *
 from PyQt6.QtGui import QPixmap
 from gui import *
@@ -78,7 +77,7 @@ class Logic(QMainWindow, Ui_MainWindow):
                     self.volume_bar.setValue(i)
             if self.current_volume >= 5:
                 self.current_volume = 5
-            # self.label_2.setText("Volume: " + str(self.current_volume))
+
 
     def turn_volume_down(self):
         if self.is_tv_on:
@@ -88,6 +87,6 @@ class Logic(QMainWindow, Ui_MainWindow):
                     self.volume_bar.setValue(i)
             if self.current_volume < 0:
                 self.current_volume = 0
-            # self.label_2.setText("Volume: " + str(self.current_volume))
+
 
 

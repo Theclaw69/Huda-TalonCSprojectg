@@ -127,30 +127,17 @@
      <string>Channel</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>250</y>
-      <width>55</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Volume</string>
-    </property>
-   </widget>
    <widget class="QProgressBar" name="volume_bar">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>270</y>
+      <x>310</x>
+      <y>250</y>
       <width>118</width>
       <height>23</height>
      </rect>
     </property>
     <property name="value">
-     <number>24</number>
+     <number>0</number>
     </property>
    </widget>
   </widget>
