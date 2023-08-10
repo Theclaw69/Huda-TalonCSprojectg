@@ -1,4 +1,5 @@
 import os
+import time
 from PyQt6.QtWidgets import *
 from PyQt6.QtGui import QPixmap
 from gui import *
@@ -17,6 +18,8 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.is_tv_on = False
         self.current_channel = 1
         self.current_volume = 1
+        self.volume_bar.setMinimum(0)
+        self.volume_bar.setMaximum(5)
 
         self.channel_images = self.load_channel_images()
         self.update_channel_image()
@@ -44,9 +47,12 @@ class Logic(QMainWindow, Ui_MainWindow):
         if self.is_tv_on:
             self.power_button.setText("Power OFF")
             self.update_channel_image()
+            self.volume_bar.setValue(self.current_volume)
+
         else:
             self.power_button.setText("Power ON")
             self.graphicsView.setScene(QtWidgets.QGraphicsScene())
+            self.volume_bar.setValue(0)
 
     def change_channel_up(self):
         if self.is_tv_on:
@@ -67,15 +73,21 @@ class Logic(QMainWindow, Ui_MainWindow):
     def turn_volume_up(self):
         if self.is_tv_on:
             self.current_volume += 1
+            for i in range(6):
+                if self.current_volume == i:
+                    self.volume_bar.setValue(i)
             if self.current_volume >= 5:
                 self.current_volume = 5
-            self.label_2.setText("Volume: " + str(self.current_volume))
+            # self.label_2.setText("Volume: " + str(self.current_volume))
 
     def turn_volume_down(self):
         if self.is_tv_on:
             self.current_volume -= 1
-            if self.current_volume <= 0:
+            for i in range(6):
+                if self.current_volume == i:
+                    self.volume_bar.setValue(i)
+            if self.current_volume < 0:
                 self.current_volume = 0
-            self.label_2.setText("Volume: " + str(self.current_volume))
+            # self.label_2.setText("Volume: " + str(self.current_volume))
 
 
