@@ -23,7 +23,6 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.volume_bar.setMaximum(5)
 
     def clicker(self, i):
-
         qpixmap = QPixmap(f'channel_images\\channel_{i}')
         self.label.setPixmap(qpixmap)
 
